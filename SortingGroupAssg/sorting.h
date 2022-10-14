@@ -1,7 +1,7 @@
 #include <iomanip>
 
 void bubbleSort(int, int);
-inline void swap(int &, int &);
+void swap(int &, int &);
 void insertSort(int, int);
 void selectionsort(int, int);
 
@@ -14,11 +14,13 @@ inline void swap(int &a, int &b){
 
 void bubbleSort(int a[], int n){
 cout<<"Bubble Sort\n";
-    int i, j;
-    for (i = 0; i < n - 1; i++)
-        for (j = 0; j < n - i - 1; j++)
-            if (a[j] > a[j + 1])
-                swap(a[j], a[j + 1]);
+    int i, j,x;
+    for (i = 0; i < n - 1; i++){
+        for (j = 0; j < n - i - 1; j++){
+            if (a[j] > a[j + 1]){
+                swap(a[j], a[j + 1]);}}
+            }
+  
   for(int i=0; i<n; ++i){
     cout<< a[i] << " ";
   }
@@ -47,14 +49,14 @@ void insertionSort(int a[], int n){
 
 void selectionSort(int a[], int n){
   cout<<"Selection Sort\n";
-  int i, j, min_i;
+  int i, j, min;
   for (i = 0; i < n-1; i++){
-    min_i = i;
+    min = i;
     for (j = i+1; j < n; j++){
-      if (a[j] < a[min_i])
-        min_i = j;
+      if (a[j] < a[min])
+        min = j;
     }
-    swap(a[min_i], a[i]);
+    swap(a[min], a[i]);
   }
   for(int i=0; i<n; ++i){
     cout<< a[i] << " ";
